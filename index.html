@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Himani-Portfolio</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #121212;
+        color: #fff;
+        text-align: center;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #00b3ff;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #ffb6c1;
+      }
+
+      .button {
+        border: none;
+        color: white;
+        padding: 15px 40px;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+        position: relative;
+      }
+
+      .button1 {
+        background-color: #00b3ff;
+      }
+
+      .button2 {
+        background-color: #ff007b;
+      }
+
+      .button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      }
+
+      img {
+        width: 200px;
+        margin-top: 30px;
+      }
+
+      .message {
+        font-size: 1rem;
+        color: #00ffcc;
+        margin-top: 15px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>This Website is under development 🚧</h1>
+    <h2>Something Amazing is coming soon... ✨</h2>
+
+    <div style="margin-top: 50px;">
+      <button class="button button2" id="noButton">Himani Portfolio</button>
+    </div>
+
+    <p class="message" id="msg">Try clicking the button 😏</p>
+
+    <img src="/busy.gif" alt="Busy gif" />
+
+    <h2>Have a nice day 😊</h2>
+
+    <script>
+      const noButton = document.querySelector('#noButton');
+      const msg = document.querySelector('#msg');
+
+      const moveNoButton = () => {
+        const x = Math.random() * (window.innerWidth - noButton.offsetWidth - 50);
+        const y = Math.random() * (window.innerHeight - noButton.offsetHeight - 50);
+
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${x}px`;
+        noButton.style.top = `${y}px`;
+
+        const funnyMessages = [
+          "Haha 😜 nice try!",
+          "You almost had it 😂",
+          "Not so easy, huh?",
+          "Catch me if you can 🏃‍♂️💨",
+          "Bro chill, I'm shy 😳",
+          "Try harder! 😏",
+        ];
+        msg.textContent = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+      };
+
+      // Move button when hovering or trying to click
+      noButton.addEventListener('mouseenter', moveNoButton);
+      noButton.addEventListener('click', moveNoButton);
+    </script>
+  </body>
+</html>
